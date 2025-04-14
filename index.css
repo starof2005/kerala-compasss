@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+.service-box {
+  min-height: 450px;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8; /* Milky white */
+  padding: 10px 20px;
+  height: 15vh; /* 15% of viewport height */
+  border-bottom: 2px solid #ccc; /* Subtle divider */
+}
+
+.header-left {
+  flex: 35%;
+  padding-left: 7%;
+ 
+}
+
+.header-left h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #0e0d0d;
+  
+}
+
+.header-right {
+  flex: 85%;
+  text-align: right;
+  padding-right: 5%;
+}
+
+.header-right nav ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 15px;
+}
+
+.header-right nav ul li a {
+  text-decoration: none;
+  color: #555151;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+.contact-box {
+  color: #003366; /* Dark Blue */
+  font-weight: bold;
+  border: 2.8px solid #080808;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-box:hover {
+  background-color: #003366; /* Dark Blue Background on Hover */
+  color: #fff; /* White Text on Hover */
+}
+
+/* Bottom Section Styling */
+.content {
+  background-color: #152415; /* Dark green */
+  color: white;
+  height: 85vh; /* 85% of viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.main-title {
+  font-size: 4rem; /* Large Text for Title */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.5rem; /* Smaller than Title */
+  margin-bottom: 20px;
+}
+
+.view-service-btn {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: #28a745; /* Green Button */
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.view-service-btn:hover {
+  background-color: #218838; /* Darker Green on Hover */
+  transform: scale(1.05); /* Slightly Larger on Hover */
+}

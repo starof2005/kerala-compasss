@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Services</title>
+  <link rel="stylesheet" href="images/train.css">
+</head>
+<body>
+  <header>
+    <h1>KSRTC Bus Services</h1>
+  </header>
+  <section>
+    <h2>Available Bus Timings and Rates</h2>
+    <p>Loading bus schedules...</p>
+    <table id="busTable">
+      <thead>
+        <tr>
+          <th>Bus Route</th>
+          <th>Departure</th>
+          <th>Ticket Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be populated dynamically -->
+      </tbody>
+    </table>
+  </section>
+  <script>
+    async function fetchBusData() {
+      try {
+        const response = await fetch('https://api.example.com/ksrtc-buses');
+        const data = await response.json();
+        const busTableBody = document.querySelector('#busTable tbody');
+        busTableBody.innerHTML = data.buses.map(bus => `
+          <tr>
+            <td>${bus.route}</td>
+            <td>${bus.departure}</td>
+            <td>${bus.ticketRate}</td>
+          </tr>
+        `).join('');
+      } catch (error) {
+        console.error('Error fetching bus data:', error);
+        document.querySelector('p').textContent = 'Unable to load bus schedules.';
+      }
+    }
+    fetchBusData();
+  </script>
+</body>
+</html>

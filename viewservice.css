@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 10px 0;
+  text-align: center;
+}
+.header-right nav ul li a:focus {
+  outline: 2px solid #003366;
+  outline-offset: 2px;
+}
+
+img {
+  width: 100%;
+  background: linear-gradient(to right, #f4f4f4, #e8e8e8);
+  height: auto; /* Keeps aspect ratio intact */
+  border-radius: 0.1%;
+  object-fit: cover; /* Ensures images fill the container while maintaining aspect ratio */
+}
+
+/* Intro Section */
+.intro-section {
+  display: flex;
+  align-items: center;
+  padding: 6%;
+  background-color: #f4f4f4;
+}
+
+.intro-content {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  width: 100%;
+}
+
+.intro-image {
+  flex: 1;
+  max-width: 25%;
+  border-radius: 8px;
+}
+
+.intro-content p {
+  flex: 2;
+  font-size: 1.2rem;
+  padding: 10px;
+  max-width: 50%; /* Ensures the paragraph takes up about half the screen width */
+  line-height: 1.6;
+}
+
+/* Services Section */
+.services-section {
+  padding: 2%;
+  background-color: #fff;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 boxes per row */
+  gap: 1%;/*jjjjjjjjjjjjjjjjjjjjjjjjjj*/
+  
+  justify-items: center; /* Centers the items horizontally in the grid */
+}
+
+.service-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  overflow: hidden;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+  width: 100%;
+  max-width: 350px; /* Keeps the box size consistent */
+  margin: 0 20px; /* Adds space between boxes */
+}
+
+.service-box h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.service-box p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.service-box img {
+  height: 200px; /* or 200px depending on your design */
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+
+.service-btn {
+  margin-top: auto;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.service-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background-color: #218838;
+}
+
+/* Talk with Our Representative - Centered */
+.representative-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.representative-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.representative-section p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .intro-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .intro-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 boxes per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* 1 box per row on extra-small screens */
+  }
+}
+/* Hover Animation for Service Box */
+.service-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.service-box:hover {
+  transform: scale(1.05); /* Slightly enlarges the box */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increases shadow for a pop effect */
+}
+footer {
+  background-color: #003366; /* Dark Blue Background */
+  color: #fff; /* White Text */
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 20px; /* Adds space between content and footer */
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 5px 0; /* Small margin for spacing */
+}
+
+footer nav {
+  margin-top: 10px;
+}
+
+footer nav a {
+  color: #28a745; /* Green Text */
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+  color: #218838; /* Darker Green on Hover */
+}

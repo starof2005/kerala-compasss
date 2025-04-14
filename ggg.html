@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nearby Restaurants Finder</title>
+  <style>
+    #map {
+      height: 80vh;
+      width: 100%;
+    }
+    #search-box {
+      text-align: center;
+      margin: 20px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="search-box">
+    <input type="text" id="locationInput" placeholder="Enter a location (e.g., Sydney)" />
+    <button onclick="searchPlaces()">Search</button>
+  </div>
+
+  <div id="map"></div>
+
+  <script>
+    let map;
+    let service;
+    let geocoder;
+    let markers = [];
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: -33.8670522, lng: 151.1957362 }, // default to Sydney
+        zoom: 14,
+      });
+
+      geocoder = new google.maps.Geocoder();
+    }
+
+    function searchPlaces() {
+      const address = document.getElementById("locationInput").value;
+      if (!address) return alert("Please enter a location!");
+
+      geocoder.geocode({ address }, function(results, status) {
+        if (status === "OK") {
+          const location = results[0].geometry.location;
+          map.setCenter(location);
+          clearMarkers();
+
+          const request = {
+            location: location,
+            radius: 1500,
+            type: ["restaurant"],
+            keyword: "cruise"
+          };
+
+          service = new google.maps.places.PlacesService(map);
+          service.nearbySearch(request, function(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              for (let i = 0; i < results.length; i++) {
+                createMarker(results[i]);
+              }
+            } else {
+              alert("No places found or an error occurred: " + status);
+            }
+          });
+        } else {
+          alert("Geocode was not successful: " + status);
+        }
+      });
+    }
+
+    function createMarker(place) {
+      if (!place.geometry || !place.geometry.location) return;
+
+      const marker = new google.maps.Marker({
+        map,
+        position: place.geometry.location,
+        title: place.name
+      });
+
+      markers.push(marker);
+    }
+
+    function clearMarkers() {
+      for (let i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
+      markers = [];
+    }
+  </script>
+
+  <!-- Load Google Maps JS with Places library -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-66jEpIJnLh5XhkKCobBpu8ZJvQVYj6A&libraries=places&callback=initMap" async defer></script>
+
+</body>
+</html>

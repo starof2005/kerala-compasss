@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Services</title>
+  <link rel="stylesheet" href="train.css">
+</head>
+<body>
+  <header>
+    <h1>Train Services in India</h1>
+  </header>
+
+  <section>
+    <h2>Get Train Schedules</h2>
+    
+    <!-- Form for taking user input -->
+    <form id="trainForm">
+      <label for="trainNumber">Train Number:</label>
+      <input type="text" id="trainNumber" name="trainNumber" placeholder="Enter Train Number" required>
+      <br>
+      <label for="departureDate">Departure Date:</label>
+      <input type="date" id="departureDate" name="departureDate" required>
+      <br>
+      <button type="submit">Get Train Schedule</button>
+    </form>
+
+    <h3>Available Train Timings</h3>
+    <p>Loading train schedules...</p>
+
+    <table id="trainTable">
+      <thead>
+        <tr>
+          <th>Train Name</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Route</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be populated dynamically -->
+      </tbody>
+    </table>
+
+    <a href="https://www.irctc.co.in" target="_blank" class="book-now">Book Tickets</a>
+  </section>
+
+  <script>
+    // Function to fetch train data based on user inputs
+    async function fetchTrainData(trainNumber, departureDate) {
+      const url = `https://indian-railway-irctc.p.rapidapi.com/api/trains/v1/train/status?departure_date=${departureDate}&isH5=true&client=web&train_number=${trainNumber}`;
+      const options = {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-key': '60dbd4c153msh30145427975fac4p15be4cjsn9eda0c44f210',
+          'x-rapidapi-host': 'indian-railway-irctc.p.rapidapi.com',
+          'x-rapid-api': 'rapid-api-database'
+        }
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json(); // Parse the response as JSON
+        if (data && data.data && data.data.train) {
+          const trainData = data.data.train;
+          const trainTableBody = document.querySelector('#trainTable tbody');
+          trainTableBody.innerHTML = `
+            <tr>
+              <td>${trainData.train_name || 'N/A'}</td>
+              <td>${trainData.departure_time || 'N/A'}</td>
+              <td>${trainData.arrival_time || 'N/A'}</td>
+              <td>${trainData.route || 'N/A'}</td>
+            </tr>
+          `;
+        } else {
+          document.querySelector('p').textContent = 'No train data available for the given inputs.';
+        }
+      } catch (error) {
+        console.error('Error fetching train data:', error);
+        document.querySelector('p').textContent = 'Unable to load train schedules. Please try again.';
+      }
+    }
+
+    // Handle form submission
+    document.getElementById('trainForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from submitting
+      const trainNumber = document.getElementById('trainNumber').value;
+      const departureDate = document.getElementById('departureDate').value;
+
+      // Validate inputs
+      if (trainNumber && departureDate) {
+        fetchTrainData(trainNumber, departureDate);
+      } else {
+        alert('Please fill in both fields.');
+      }
+    });
+  </script>
+</body>
+</html>

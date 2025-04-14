@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxi Services</title>
+  <link rel="stylesheet" href="train.css">
+</head>
+<body>
+  <header>
+    <h1>Taxi Services Near You</h1>
+  </header>
+  <section>
+    <h2>Available Taxi Drivers</h2>
+    <button onclick="fetchTaxiData()">Locate Taxis</button>
+    <ul id="taxiList">
+      <!-- Data will be populated dynamically -->
+    </ul>
+  </section>
+  <script>
+    async function fetchTaxiData() {
+      try {
+        const response = await fetch('https://api.example.com/nearby-taxis?location=kerala');
+        const data = await response.json();
+        const taxiList = document.querySelector('#taxiList');
+        taxiList.innerHTML = data.taxis.map(taxi => `
+          <li>
+            <strong>${taxi.driverName}</strong> - Contact: ${taxi.contact}
+          </li>
+        `).join('');
+      } catch (error) {
+        console.error('Error fetching taxi data:', error);
+        document.querySelector('#taxiList').innerHTML = '<li>Unable to load taxi data.</li>';
+      }
+    }
+  </script>
+</body>
+</html>

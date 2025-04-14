@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Culture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #4caf50;
+            margin-top: 20px;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .headings {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .headings h2 {
+            cursor: pointer;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #2196f3;
+            border: none;
+            border-radius: 30px;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        }
+
+        .headings h2:hover {
+            transform: translateY(-3px);
+            background-color: #1769aa;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            display: none;
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 900px;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .content img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        button.service-btn {
+            margin-top: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button.service-btn:hover {
+            background-color: #357a38;
+            transform: scale(1.05);
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .service-box {
+            flex: 1 1 200px;
+            max-width: 250px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-box h3 {
+            margin: 10px 0;
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        .service-box p {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Explore Kerala's Culture</h1>
+
+    <div class="headings">
+        <h2 onclick="toggleContent('malayalamBasics')">LANGUAGE</h2>
+        <h2 onclick="toggleContent('festivals')">FESTIVALS</h2>
+        <h2 onclick="toggleContent('artForms')">ART FORMS</h2>
+        <h2 onclick="toggleContent('cuisine')">CUISINE</h2>
+        <h2 onclick="toggleContent('traditions')">TRADITIONS</h2>
+    </div>
+
+    <div class="content" id="malayalamBasics">
+        <img src="images/languages.jpg" alt="Language">
+        <h1>Kerala Travel Helper: Language and Culture Guide</h1>
+
+        <h2>Common Greetings and Basic Phrases</h2>
+        <ul>
+            <li><strong>Hello</strong>: നമസ്കാരം (Namaskāram)</li>
+            <li><strong>Good Morning</strong>: സുപ്രഭാതം (Suprabhātam)</li>
+            <li><strong>Good Night</strong>: ശുഭ രാത്രി (Shubha Rāthri)</li>
+            <li><strong>Thank you</strong>: നന്ദി (Nandi)</li>
+            <li><strong>Welcome</strong>: സ്വാഗതം (Swāgatham)</li>
+            <li><strong>How are you?</strong>: സുഖമാണോ? (Sukhamaano?)</li>
+            <li><strong>I am fine</strong>: സുഖമാണു (Sukhamaanu)</li>
+            <li><strong>What is your name?</strong>: നിന്റെ പേര് എന്താണ്? (Ninte Pēru Enthānu?)</li>
+            <li><strong>My name is…</strong>: എന്റെ പേര് ... ആണ് (Ente Pēru ... ānu)</li>
+            <li><strong>Nice to meet you</strong>: നിന്നെ കണ്ടതിൽ സന്തോഷം (Ninne Kandaṭhil Santhōsham)</li>
+            <li><strong>Yes</strong>: ആം (Aam)</li>
+            <li><strong>No</strong>: ഇല്ല (Illa)</li>
+            <li><strong>Please</strong>: ദയവായി (Dayavāyi)</li>
+            <li><strong>Sorry</strong>: ക്ഷമിക്കണം (Kṣhamikkaṇam)</li>
+            <li><strong>Excuse me</strong>: ക്ഷമിക്കണം (Kṣhamikkaṇam)</li>
+            <li><strong>Goodbye</strong>: വിട (Viḍa)</li>
+            <li><strong>See you soon</strong>: ഉടൻ കാണാം (Uḍan Kāṇām)</li>
+            <li><strong>Take care</strong>: ശ്രദ്ധിക്കൂ (Shradhikkū)</li>
+            <li><strong>I love you</strong>: ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു (Ñān Ninne Snehikkunnu)</li>
+            <li><strong>I miss you</strong>: ഞാൻ നിന്നെ ഓർക്കുന്നു (Ñān Ninne Ōrkunnu)</li>
+        </ul>
+    
+        <h2>Numbers (Basic)</h2>
+        <ul>
+            <li><strong>Zero</strong>: പൂജ്യം (Pūjyam)</li>
+            <li><strong>One</strong>: ഒന്ന് (Onnu)</li>
+            <li><strong>Two</strong>: രണ്ട് (Randu)</li>
+            <li><strong>Three</strong>: മൂന്ന് (Moonnu)</li>
+            <li><strong>Four</strong>: നാല് (Naalu)</li>
+            <li><strong>Five</strong>: അഞ്ച് (Anchu)</li>
+            <li><strong>Six</strong>: ആറ് (Aaru)</li>
+            <li><strong>Seven</strong>: ഏഴ് (Ezh)</li>
+            <li><strong>Eight</strong>: എട്ട് (Ettu)</li>
+            <li><strong>Nine</strong>: ഒന്‍പത് (Onpathu)</li>
+            <li><strong>Ten</strong>: പത്ത് (Pathu)</li>
+        </ul>
+    
+        <h2>Transportation</h2>
+        <ul>
+            <li><strong>Bus</strong>: ബസ് (Bas)</li>
+            <li><strong>Train</strong>: ട്രെയിൻ (Train)</li>
+            <li><strong>Taxi</strong>: ടാക്സി (Tāksi)</li>
+            <li><strong>Where is the bus stop?</strong>: ബസ് സ്റ്റോപ്പ് എവിടെയാണ്? (Bas Stop Evidēyaanu?)</li>
+            <li><strong>I need a ticket to…</strong>: എനിക്ക് ... ൽ ഒരു ടിക്കറ്റ് വേണം (Enikku ...il Oru Ticket Vēṇam)</li>
+            <li><strong>When is the next bus/train?</strong>: അടുത്ത ബസ്/ട്രെയിൻ എപ്പോഴാണ്? (Adutha Bas/Train Eppozhaanu?)</li>
+            <li><strong>How much is the fare?</strong>: കൂലി എത്രയാണ്? (Koōli Ethrayānu?)</li>
+            <li><strong>I want to go to…</strong>: എനിക്ക് ... ൽ പോകണം (Enikku ...il Pōkaṇam)</li>
+        </ul>
+    
+        <h2>Emergency Phrases</h2>
+        <ul>
+            <li><strong>Help!</strong>: സഹായിക്കൂ! (Sahāyikkū!)</li>
+            <li><strong>Call the police</strong>: പോലീസ് വിളിക്കൂ (Polīce Viḷikkū)</li>
+            <li><strong>I am lost</strong>: ഞാൻ വഴിതെറ്റി (Ñān Vaḻithēṛṭi)</li>
+            <li><strong>I need a doctor</strong>: എനിക്ക് ഡോക്ടർ വേണം (Enikku Dōkṭar Vēṇam)</li>
+            <li><strong>Fire</strong>: തീ (Thī)</li>
+            <li><strong>Accident</strong>: അപകടം (Apakaṭam)</li>
+        </ul>
+    
+        <h2>Dining and Accommodation</h2>
+        <ul>
+            <li><strong>I am hungry</strong>: എനിക്ക് വിശക്കുന്നുണ്ട് (Enikku Vishakunnuṇṭu)</li>
+            <li><strong>Where is a good restaurant?</strong>: നല്ല ഹോട്ടൽ എവിടെയാണ്? (Nalla Hoṭṭel Evidēyaanu?)</li>
+            <li><strong>Vegetarian food</strong>: സസ്യാഹാരഭക്ഷണം (Sasyaahaarabhakṣhaṇam)</li>
+            <li><strong>Non-vegetarian food</strong>: മാംസഭക്ഷണം (Maamsabhakṣhaṇam)</li>
+            <li><strong>Water</strong>: വെള്ളം (Veḷḷam)</li>
+        </ul>
+    
+        <h2>Shopping</h2>
+        <ul>
+            <li><strong>How much does this cost?</strong>: ഇതിന്റെ വില എത്രയാണ്? (Ethinte Vila Ethrayānu?)</li>
+            <li><strong>Can you give a discount?</strong>: വില കുറയ്ക്കാമോ? (Vila Kuṛaykkāmo?)</li>
+            <li><strong>I want to buy this</strong>: ഇത് എനിക്ക് വേണം (Ithu Enikku Vēṇam)</li>
+        </ul>
+    
+        <h2>Tourist Phrases</h2>
+        <ul>
+            <li><strong>Where is this place?</strong>: ഈ സ്ഥലം എവിടെയാണ്? (Ee Sthalam Evidēyaanu?)</li>
+            <li><strong>Can you take a photo?</strong>: ഒരു ഫോട്ടോ എടുക്കാമോ? (Oru Photo Edukkāmo?)</li>
+            <li><strong>Beautiful</strong>: സുന്ദരം (Sundaram)</li>
+        </ul>
+    </div>
+
+    <div class="content" id="festivals">
+        <img src="images/fest.jpg" alt="Festivals">
+        <p>Major Festivals:</p>
+        <ul>
+            <li><strong>Onam</strong>: Harvest festival with boat races and the grand Onam Sadya (feast).</li>
+            <li><strong>Vishu</strong>: Malayalam New Year, marked by the Vishu Kani ritual.</li>
+            <li><strong>Thiruvathira</strong>: A festival celebrated by women with traditional dances.</li>
+        </ul>
+        <div class="services-grid">
+            <div class="service-box">
+                <img src="images/onam.jpg" alt="Kathakali">
+                <h3>ONAM</h3>
+                <p>Kerala’s harvest festival, celebrated with grand feasts (Onasadya), floral decorations (Pookalam), Vallamkali (boat races), and traditional games..</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Onam';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/thrissurpooram.jpg" alt="Mohiniyattam">
+                <h3>THRISSUR POORAM</h3>
+                <p>A vibrant temple festival featuring caparisoned elephants, traditional percussion ensembles, and an awe-inspiring fireworks display.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Thrissur_Pooram';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/vishu.jpg" alt="Theyyam">
+                <h3>VISHU</h3>
+                <p>The Malayalam New Year, marked by Vishukkani (auspicious sight), fireworks, and feasts.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Vishu';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/attukalpongala.jpg" alt="Kalaripayattu">
+                <h3>ATTUKAL PONGALA</h3>
+                <p>A unique festival where millions of women gather to prepare offerings to the goddess Attukal Bhagavathy.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Attukal_Pongala';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/nehrutrophy.jpg" alt="Theyyam">
+                <h3>NEHRU TROPHY BOAT RACE</h3>
+                <p> A popular Vallamkali (snake boat race) held in the Punnamada Lake in Alappuzha.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Nehru_Trophy_Boat_Race';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/makaravilakku.jpg" alt="Kalaripayattu">
+                <h3>MAKARAVILAKKU</h3>
+                <p>Celebrated at Sabarimala, marking the celestial light seen on Makara Sankranti.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Makaravilakku';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/kalpathi.jpg" alt="Kalaripayattu">
+                <h3>KALPATHI RATOLSAVAM</h3>
+                <p>A chariot festival in Palakkad, featuring processions of decorated temple chariots.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Kalpathi_Ratholsavam';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/bakrid.jpg" alt="Theyyam">
+                <h3>BAKRID AND EID</h3>
+                <p> Showcasing Kerala’s communal harmony, these Islamic festivals are celebrated with prayers and feasts.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Eid_al-Adha';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/christmas.jpg" alt="Kalaripayattu">
+                <h3>CHRISTMAS</h3>
+                <p> A festive season observed with midnight masses, carols, and traditional Kerala Christmas dishes.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Christmas';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/diwali.jpg" alt="Kalaripayattu">
+                <h3>DIWALI</h3>
+                <p> Although less prominent, Diwali is celebrated with lights, sweets, and fireworks.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Diwali';">Read more</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="artForms">
+        <img src="images/art.jpg" alt="Art Forms">
+        <p>Kerala's cultural richness is reflected in its art forms:</p>
+        <div class="services-grid">
+            <div class="service-box">
+                <img src="images/kathakali.jpg" alt="Kathakali">
+                <h3>KATHAKALI</h3>
+                <p>Traditional dance drama with expressive performances.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Kathakali';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/mohiniyaattam.jpg" alt="Mohiniyattam">
+                <h3>MOHINIYATTAM</h3>
+                <p>Graceful classical dance performed by women.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Mohiniyattam';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/theyyam.jpg" alt="Theyyam">
+                <h3>THEYYAM</h3>
+                <p>Traditional ritual art with vibrant costumes and makeup.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Theyyam';">Read more</button>
+            </div>
+                <div class="service-box">
+                <img src="images/kalaripayattu.jpg" alt="Kalaripayattu">
+                <h3>KALARIPAYATTU</h3>
+                <p>Ancient martial art form involving physical postures and movements.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Kalaripayattu';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/chakyarkoothu.jpg" alt="Theyyam">
+                <h3>CHAKYAR KOOTHU</h3>
+                <p> A traditional satirical art form performed in temples, mime, and humor.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Chakyar_koothu';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/ottamthullal.jpg" alt="Kalaripayattu">
+                <h3>OTTAMTHULLAL</h3>
+                <p>A poetic performance combining dance and music</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Ottan_Thullal';">Read more</button>
+            </div>
+            <div class="service-box">
+                <img src="images/panchavaadyam.jpg" alt="Kalaripayattu">
+                <h3>PANCHAVAADHYAM</h3>
+                <p>A percussion ensemble of five traditional instruments, creating a rhythmic musical experience.</p>
+                <button class="service-btn" onclick="window.location.href='https://en.wikipedia.org/wiki/Panchavadyam';">Read more</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="cuisine">
+        <div id="cuisine-section">
+            <h2>Delicious Kerala Cuisine</h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <h3>POROTTA BEEF</h3>
+                    <p>A popular Kerala dish with flaky porotta served with spicy beef curry.</p>
+                    <img src="images/porotta.jpg" alt="Porotta Beef">
+                </div>
+                <div class="service-box">
+                    <img src="images/pazhampozhi.jpg" alt="Pazham Pori">
+                    <h3>PAZHAMPOZHI</h3>
+                    <p>Traditional Kerala banana fritters made with ripe bananas and a crispy outer layer.</p>
+                </div>
+                <div class="service-box">
+                    <h3>KAPPA MEEN CURRY</h3>
+                    <p>A classic Kerala combo of boiled tapioca (kappa) and flavorful fish curry (meen curry).</p>
+                    <img src="images/meencurry.jpg" alt="Kappa Meen Curry">
+                </div>
+                <div class="service-box">
+                    <img src="images/pazhamkanji.jpg" alt="Pazhamkanji">
+                    <h3>PAZHAMKANJI</h3>
+                    <p>Rice porridge served with mashed banana, a comforting dish popular for breakfast.</p>
+                </div>
+                <div class="service-box">
+                    <h3>CHATTI CHOORU</h3>
+                    <p>A traditional Kerala meal served in a clay pot, usually with rice and fish curry.</p>
+                    <img src="images/chatti.jpg" alt="Chatti Choru">
+                </div>
+                <div class="service-box">
+                    <img src="images/puttu.jpg" alt="Puttu and Kadala">
+                    <h3>PUTTU AND KADALA</h3>
+                    <p>Steamed rice cake served with black chickpea curry, a popular breakfast dish.</p>
+                </div>
+                <div class="service-box">
+                    <h3>APPAM AND STEW</h3>
+                    <p>Soft, lace-edged appam paired with coconut milk-based stew made with chicken or vegetables.</p>
+                    <img src="images/appam.jpg" alt="Appam and Stew">
+                </div>
+                <div class="service-box">
+                    <img src="images/biryani.jpg" alt="Thalassery Biryani">
+                    <h3>THALASSERY BIRYANI</h3>
+                    <p>A flavorful and aromatic biryani from North Kerala, made with small-grain rice and spices.</p>
+                </div>
+                <div class="service-box">
+                    <h3>MALABAR PAROTTA</h3>
+                    <p>Soft and flaky layered flatbread, a must-have with Kerala-style curries.</p>
+                    <img src="images/malabarparotta.jpg" alt="Malabar Parotta">
+                </div>
+                <div class="service-box">
+                    <img src="images/sadhya.jpg" alt="Kerala Sadhya">
+                    <h3>KERALA SADHYA</h3>
+                    <p>A grand vegetarian feast served on a banana leaf, with a variety of dishes and payasam.</p>
+                </div>
+            </div>
+            
+           
+
+            </div>
+        </div>
+       
+        
+    </div>
+
+    <div class="content" id="traditions">
+        <img src="https://example.com/traditions.jpg" alt="Traditions">
+        <p>Traditional Clothing: Mundu (Traditional Dhoti), Kasavu Sari.</p>
+        <p>Heritage Practices: Ayurveda, martial arts like Kalaripayattu, Handicrafts like coir and bamboo work.</p>
+    </div>
+
+    <script>
+        function toggleContent(sectionId) {
+            var sections = document.querySelectorAll('.content');
+            sections.forEach(section => section.style.display = 'none');
+            var content = document.getElementById(sectionId);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+        function toggleContent(sectionId) {
+        // Hide all content sections
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // Show the selected section
+        const selectedContent = document.getElementById(sectionId);
+        if (selectedContent) {
+            selectedContent.style.display = 'block';
+        }
+    }
+       
+    </script>
+
+</body>
+
+</html>
